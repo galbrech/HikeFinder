@@ -6,5 +6,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="nw">NEW</string>
     <string name="profile">PROFILE</string>
-
+    <string name="location">Location</string>
+    <string name="ocean_view">Ocean View</string>
+    <string name="waterfall">Waterfall</string>
+	<string name="dog_friendly">Dog Friendly</string>
+	<string name="historical">Historical</string>
+	<string name="geological">Geological</string>
+	<string name="bikes_allowed">Bikes Allowed</string>
+    
 </resources>
