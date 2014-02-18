@@ -21,10 +21,17 @@
     <string name="submit">SUBMIT</string>
     <string name="miles">miles</string>
     <string name="feet">feet</string>
-    <string name="route">Route</string>
+    <string name="route">Hike Route</string>
     <string name="view_checklist">View Checklist</string>
     <string name="view_map">View Map</string>
     <string name="completed">Completed? Rate this Hike</string>
     <string name="sample_route">Hibiscus Trail->\nRocky Ridge Trail->\nFisher Bluffs Trail->\nMayday Trail->\nHibiscus Trail</string>
-	
+    <string name="LOMB">Land of Medicine Buddha</string>
+    <string name="sample_description">Land of Medicine Buddha, a Buddhist retreat center located just south of Santa Cruz in Soquel, CA! This is a supremely beautiful and peaceful area with lovely hiking trails through the redwoods. </string>
+	<string name="features_present">Features Present</string>
+	<string name="download_map">Download Map</string>
+	<string name="description">Description</string>
+	<string name="select_hike">Select Hike</string>
+	<string name="sample_features">Dog-Friendly, Historical</string>
+	<string name="map_button">Map Button</string>
 </resources>
