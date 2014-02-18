@@ -29,9 +29,10 @@ public final class R {
         public static final int yosemite=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090013;
+        public static final int action_settings=0x7f090014;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
+        public static final int button3=0x7f090013;
         public static final int checkBox1=0x7f09000e;
         public static final int checkBox2=0x7f09000a;
         public static final int checkBox3=0x7f090009;
@@ -53,6 +54,7 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int options=0x7f030001;
+        public static final int route=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -61,6 +63,7 @@ public final class R {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int bikes_allowed=0x7f06000b;
+        public static final int completed=0x7f060017;
         public static final int distance=0x7f06000f;
         public static final int dog_friendly=0x7f060008;
         public static final int elevation=0x7f060010;
@@ -73,8 +76,12 @@ public final class R {
         public static final int nw=0x7f060003;
         public static final int ocean_view=0x7f060006;
         public static final int profile=0x7f060004;
+        public static final int route=0x7f060014;
+        public static final int sample_route=0x7f060018;
         public static final int submit=0x7f060011;
         public static final int title1=0x7f06000c;
+        public static final int view_checklist=0x7f060015;
+        public static final int view_map=0x7f060016;
         public static final int waterfall=0x7f060007;
         public static final int yes=0x7f06000e;
         public static final int zip=0x7f06000d;

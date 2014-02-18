@@ -21,5 +21,10 @@
     <string name="submit">SUBMIT</string>
     <string name="miles">miles</string>
     <string name="feet">feet</string>
+    <string name="route">Route</string>
+    <string name="view_checklist">View Checklist</string>
+    <string name="view_map">View Map</string>
+    <string name="completed">Completed? Rate this Hike</string>
+    <string name="sample_route">Hibiscus Trail->\nRocky Ridge Trail->\nFisher Bluffs Trail->\nMayday Trail->\nHibiscus Trail</string>
 	
 </resources>
