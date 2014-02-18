@@ -11,21 +11,22 @@
 
     <Button
         android:id="@+id/button1"
-        android:background="@color/colorFawn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/colorFawn"
         android:text="@string/nw" />
 
     <Button
         android:id="@+id/button2"
-        android:background="@color/colorFawn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="34dp"
+        android:background="@color/colorFawn"
         android:text="@string/profile" />
 
 </RelativeLayout>
