@@ -32,6 +32,6 @@
 	<string name="download_map">Download Map</string>
 	<string name="description">Description</string>
 	<string name="select_hike">Select Hike</string>
-	<string name="sample_features">Dog-Friendly, Historical</string>
+	<string name="sample_features">Dog-Friendly, Historical\n6 miles, 1500 foot elevation gain</string>
 	<string name="map_button">Map Button</string>
 </resources>
