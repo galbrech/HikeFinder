@@ -30,6 +30,21 @@ public final class R {
         public static final int yosemite=0x7f020002;
     }
     public static final class id {
+<<<<<<< HEAD
+        public static final int action_settings=0x7f090006;
+        public static final int button1=0x7f090000;
+        public static final int button2=0x7f090002;
+        public static final int checkBox1=0x7f090003;
+        public static final int checkedTextView1=0x7f090004;
+        public static final int retrn=0x7f090005;
+        public static final int textView1=0x7f090001;
+    }
+    public static final class layout {
+        public static final int activity_main=0x7f030000;
+        public static final int options=0x7f030001;
+        public static final int profile=0x7f030002;
+        public static final int results=0x7f030003;
+=======
         public static final int action_settings=0x7f090015;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
@@ -58,6 +73,7 @@ public final class R {
         public static final int hike_description=0x7f030001;
         public static final int options=0x7f030002;
         public static final int route=0x7f030003;
+>>>>>>> 4b3fdaea602d3fea8253b3c9f96b87ad365850df
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -73,6 +89,11 @@ public final class R {
         public static final int feet=0x7f060013;
         public static final int geological=0x7f06000a;
         public static final int hello_world=0x7f060002;
+<<<<<<< HEAD
+        public static final int profile=0x7f060003;
+        public static final int results=0x7f060004;
+        public static final int retrn=0x7f060005;
+=======
         public static final int historical=0x7f060009;
         public static final int location=0x7f060005;
         public static final int miles=0x7f060012;
@@ -88,6 +109,7 @@ public final class R {
         public static final int waterfall=0x7f060007;
         public static final int yes=0x7f06000e;
         public static final int zip=0x7f06000d;
+>>>>>>> 4b3fdaea602d3fea8253b3c9f96b87ad365850df
     }
     public static final class style {
         /** 
