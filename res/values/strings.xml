@@ -4,9 +4,9 @@
     <string name="app_name">HikeFinder</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-<<<<<<< HEAD
+
     <string name="nw">NEW</string>
-    <string name="profile">PROFILE</string>
+    <string name="profileCaps">PROFILE</string>
     <string name="location">Location</string>
     <string name="ocean_view">Ocean View</string>
     <string name="waterfall">Waterfall</string>
@@ -35,15 +35,9 @@
 	<string name="select_hike">Select Hike</string>
 	<string name="sample_features">Dog-Friendly, Historical\n6 miles, 1500 foot elevation gain</string>
 	<string name="map_button">Map Button</string>
-=======
-    
-    
-    
-    
-    
+        
     <string name="profile">Profile</string>
     <string name="results">Results</string>
     <string name="retrn">RETURN</string>
 
->>>>>>> 162285652c3849f5d92375e0466810ad9a2190d1
 </resources>
