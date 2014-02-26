@@ -32,10 +32,12 @@ public final class R {
         public static final int yosemite=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f090016;
+        public static final int TextView01=0x7f090015;
+        public static final int TextView02=0x7f090016;
+        public static final int action_settings=0x7f090019;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
-        public static final int button3=0x7f090015;
+        public static final int button3=0x7f090018;
         public static final int checkBox1=0x7f09000f;
         public static final int checkBox2=0x7f09000b;
         public static final int checkBox3=0x7f09000a;
@@ -45,6 +47,7 @@ public final class R {
         public static final int editText2=0x7f090011;
         public static final int editText3=0x7f090013;
         public static final int imageButton1=0x7f090008;
+        public static final int listView1=0x7f090017;
         public static final int retrn=0x7f090014;
         public static final int textView1=0x7f090003;
         public static final int textView2=0x7f090005;
@@ -88,6 +91,12 @@ public final class R {
         public static final int miles=0x7f060012;
         public static final int nw=0x7f060003;
         public static final int ocean_view=0x7f060006;
+        public static final int prof1=0x7f060024;
+        public static final int prof1_1=0x7f060025;
+        public static final int prof1_2=0x7f060026;
+        public static final int prof1_3=0x7f060027;
+        public static final int prof2=0x7f060028;
+        public static final int prof3=0x7f060029;
         public static final int profile=0x7f060021;
         public static final int profileCaps=0x7f060004;
         public static final int results=0x7f060022;

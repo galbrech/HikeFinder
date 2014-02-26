@@ -11,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends Activity
 {
 	Button clickButton;
+	Button clickButton2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -20,12 +21,23 @@ public class MainActivity extends Activity
 		
 		// to make the button do stuff
 		clickButton = (Button) findViewById(R.id.button1);
+		clickButton2 = (Button) findViewById(R.id.button2);
 		// create listner for button clicks
 		clickButton.setOnClickListener( new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 	        	Intent myIntent = new Intent(MainActivity.this, Options.class);
+	        	//myIntent.putExtra("key", value); //Optional parameters
+	        	MainActivity.this.startActivity(myIntent);
+            }
+        });
+		
+		clickButton2.setOnClickListener( new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+	        	Intent myIntent = new Intent(MainActivity.this, Profile.class);
 	        	//myIntent.putExtra("key", value); //Optional parameters
 	        	MainActivity.this.startActivity(myIntent);
             }
