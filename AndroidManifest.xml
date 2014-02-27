@@ -26,7 +26,6 @@
         
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Options"/>
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Profile"/>
-        
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Results"/>
         
     </application>
