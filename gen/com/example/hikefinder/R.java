@@ -92,12 +92,6 @@ public final class R {
         public static final int miles=0x7f060012;
         public static final int nw=0x7f060003;
         public static final int ocean_view=0x7f060006;
-        public static final int prof1=0x7f060024;
-        public static final int prof1_1=0x7f060025;
-        public static final int prof1_2=0x7f060026;
-        public static final int prof1_3=0x7f060027;
-        public static final int prof2=0x7f060028;
-        public static final int prof3=0x7f060029;
         public static final int prof1=0x7f060025;
         public static final int prof1_1=0x7f060026;
         public static final int prof1_2=0x7f060027;
@@ -107,7 +101,6 @@ public final class R {
         public static final int profile=0x7f060021;
         public static final int profileCaps=0x7f060004;
         public static final int results=0x7f060022;
-        public static final int retrn=0x7f060023;
         public static final int retrn=0x7f060024;
         public static final int route=0x7f060014;
         public static final int sample_description=0x7f06001a;
