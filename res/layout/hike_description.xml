@@ -77,4 +77,14 @@
         android:contentDescription="@string/map_button"
         android:src="@drawable/index" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@color/colorAsparagus"
+        android:text="@string/select_hike" />
+
 </RelativeLayout>
