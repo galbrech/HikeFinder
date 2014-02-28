@@ -68,16 +68,6 @@
         android:text="@string/description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
-        android:background="@color/colorAsparagus"
-        android:text="@string/select_hike" />
-
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
