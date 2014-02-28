@@ -86,6 +86,7 @@ public final class R {
         public static final int geological=0x7f06000a;
         public static final int hello_world=0x7f060002;
         public static final int historical=0x7f060009;
+        public static final int home=0x7f060023;
         public static final int location=0x7f060005;
         public static final int map_button=0x7f060020;
         public static final int miles=0x7f060012;
@@ -97,10 +98,17 @@ public final class R {
         public static final int prof1_3=0x7f060027;
         public static final int prof2=0x7f060028;
         public static final int prof3=0x7f060029;
+        public static final int prof1=0x7f060025;
+        public static final int prof1_1=0x7f060026;
+        public static final int prof1_2=0x7f060027;
+        public static final int prof1_3=0x7f060028;
+        public static final int prof2=0x7f060029;
+        public static final int prof3=0x7f06002a;
         public static final int profile=0x7f060021;
         public static final int profileCaps=0x7f060004;
         public static final int results=0x7f060022;
         public static final int retrn=0x7f060023;
+        public static final int retrn=0x7f060024;
         public static final int route=0x7f060014;
         public static final int sample_description=0x7f06001a;
         public static final int sample_features=0x7f06001f;

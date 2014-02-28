@@ -39,7 +39,8 @@
     <string name="profile">Profile</string>
 
     <string name="results">Results</string>
-    <string name="retrn">RETURN</string>
+    <string name="home">Home</string>
+    <string name="retrn">Return</string>
     <string name="prof1">Hikes Completed  ................ 5</string>
     <string name="prof1_1">Hike One</string>
     <string name="prof1_2">Hike Two</string>
