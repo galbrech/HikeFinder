@@ -90,11 +90,6 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int hike_description=0x7f030001;
-        public static final int options=0x7f030002;
-        public static final int profile=0x7f030003;
-        public static final int results=0x7f030004;
-        public static final int route=0x7f030005;
         public static final int checklist=0x7f030001;
         public static final int completed=0x7f030002;
         public static final int hike_description=0x7f030003;
