@@ -46,7 +46,27 @@
     <string name="prof1_2">Hike Two</string>
     <string name="prof1_3">Hike Three</string> 
     <string name="prof2">Total Miles  .......................... 58</string>
-    <string name="prof3">Calories Burned  .................. 31,043</string>   
-
+    <string name="prof3">Calories Burned  .................. 31,043</string>
+    	
+    <string name="checklist_checklist">Checklist</string>
+    <string name="checklist_water">Water</string>
+    <string name="checklist_flashlight">Flashlight</string>
+	<string name="checklist_money">Money</string>
+	<string name="checklist_food">Small Snack</string>
+	<string name="checklist_aid">First Aid Kit</string>
+	<string name="checklist_warnings">Warnings:</string>
+	<string name="checklist_sunset">Sunset is at: </string>
+	<string name="checklist_sunset_time">7:33 pm</string>
+	<string name="checklist_back">Back</string>
+	<string name="checklist_personalitems">Personal Items</string>
+	<string name="checklist_personalitems_list">pocket knife</string>
+	
+    <string name="completed_completed">Completed</string>
+	<string name="completed_rate">Rate this hike</string>
+    <string name="completed_review">Write a review</string>
+	<string name="completed_sample_review">I liked this hike. All the features I wanted were present, and the hike took as long as expected.</string>
+    <string name="completed_notes">Write some notes</string>
+	<string name="completed_sample_notes">Had to pay for parking.</string>
+	<string name="completed_save">Save</string>
 
 </resources>
