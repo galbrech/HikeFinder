@@ -32,6 +32,7 @@ public final class R {
         public static final int yosemite=0x7f020004;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int TextView01=0x7f090015;
         public static final int TextView02=0x7f090016;
         public static final int action_settings=0x7f09001a;
