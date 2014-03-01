@@ -20,17 +20,18 @@ public class Hike_Description extends Activity{
 		//String value = intent.getStringExtra("key"); //if it's a string you stored.
 	
 	//Below to be filled in after remaining layout.xml files are added
-	/*	selectHike = (Button) findViewById(R.id.button1);
+		selectHike = (Button) findViewById(R.id.button1);
 		
 		selectHike.setOnClickListener( new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-	        	Intent myIntent = new Intent(Hike_Description.this, MainActivity.class);
-	        	//myIntent.putExtra("key", value); //Optional parameters
-	        	Hike_Description.this.startActivity(myIntent);
-            }
-        });*/
+			@Override
+			public void onClick(View v) {
+            // TODO Auto-generated method stub
+        	Intent myIntent = new Intent(Hike_Description.this, Route.class);
+        	//myIntent.putExtra("key", value); //Optional parameters
+        	Hike_Description.this.startActivity(myIntent);
+        }
+    });
+	
 	}
 
 }

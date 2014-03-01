@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/retrn"
+        android:text="Select a Hike:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
@@ -29,13 +29,13 @@
     </ListView>
 
     <Button
-        android:id="@+id/retrn"
+        android:id="@+id/submitButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="21dp"
         android:background="@color/colorAsparagus"
-        android:text="@string/retrn" />
+        android:text="@string/submit" />
 
 </RelativeLayout>
