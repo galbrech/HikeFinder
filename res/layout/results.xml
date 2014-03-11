@@ -22,7 +22,7 @@
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/retrn"
+        android:layout_above="@+id/submitButton"
         android:layout_alignRight="@+id/retrn"
         android:layout_below="@+id/textView1" >
 

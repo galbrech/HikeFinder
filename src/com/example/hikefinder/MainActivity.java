@@ -19,7 +19,6 @@ public class MainActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		
 		DatabaseHandler db = new DatabaseHandler(this);
 
       // add Hikes
@@ -28,9 +27,9 @@ public class MainActivity extends Activity
       db.addHike(new Hike("Berry Creek Falls Hike", "This beautiful hike features three waterfalls and a variety of terrain from old-growth redwoods to sand hills. It is one of the must-experience hikes in this region!", 10.2, 1500, 1, 1, 0, 0, 0, "Big Basin State Park Highway 9"));
       db.addHike(new Hike("Purisima Creek Hike", "This lovely hike through the mostly second-generation redwoods, also features a variety of plant and tree species, a flowing creek and views of Half Moon Bay. This place is beautiful and somewhat off the beaten path.", 7, 2000, 0, 0, 0, 0, 1, "Higgins Canyon Rd, Half Moon Bay, CA 94019"));
       
-      db.getHikesCount();
+      //db.getHikesCount();
       //db.getAllHikes();
-      db.queryHike(new Hike(null, null, 0, 0, 0, 1, 0, 0, 0, null));
+      //db.queryHike(new Hike(null, null, 0, 0, 0, 1, 0, 0, 0, null));
 		
 		// to make the button do stuff
 		clickButton = (Button) findViewById(R.id.button1);

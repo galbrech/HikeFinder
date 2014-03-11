@@ -1,6 +1,5 @@
 package com.example.hikefinder;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -46,6 +45,13 @@ public class DatabaseHandler extends SQLiteOpenHelper
 
       // create hikesDB table
       db.execSQL(CREATE_HIKE_TABLE);
+      
+/*      addHike(new Hike("Loch Lomond", "The Loch Lomond Recreation Area offers a unique hiking experience, boasting a 175-acre lake surrounded by redwood forest. The area is dog-friendly and features a variety of recreation activities besides hiking.", 4.8, 800, 0, 1, 1, 1, 0, "100 Loch Lomond Way, Felton, CA 95018"));
+      addHike(new Hike("Wilder Ranch, Baldwin Loop", "If you love hikes with ocean views, this is the hike for you! The hike begins across the street from Four Mile Beach, a beach famous for its surfers. From this starting point, climb up approximately 800 feet, enjoying spectacular views of the Monterey Bay the entire way. At the top of the hill, take the Enchanted Loop trail through some lovely, cool redwoods until you encounter the Baldwin Loop trail again. Then, wind back down again, enjoying the ocean vistas.", 6, 800, 0, 0, 0, 0, 1, "Highway 1, Santa Cruz; near 3810 Coast Rd Santa Cruz, CA 95060"));
+      addHike(new Hike("Berry Creek Falls Hike", "This beautiful hike features three waterfalls and a variety of terrain from old-growth redwoods to sand hills. It is one of the must-experience hikes in this region!", 10.2, 1500, 1, 1, 0, 0, 0, "Big Basin State Park Highway 9"));
+      addHike(new Hike("Purisima Creek Hike", "This lovely hike through the mostly second-generation redwoods, also features a variety of plant and tree species, a flowing creek and views of Half Moon Bay. This place is beautiful and somewhat off the beaten path.", 7, 2000, 0, 0, 0, 0, 1, "Higgins Canyon Rd, Half Moon Bay, CA 94019"));
+      
+      getHikesCount();*/
    }
 
    @Override
@@ -143,7 +149,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
    	int columnArgNumber = 0;
    	String whereClause = "";
    	
-   	//List<Hike> hikes = new LinkedList<Hike>();
+   	List<Hike> hikes;
    	
    	SQLiteDatabase db=this.getReadableDatabase();
    	
@@ -183,16 +189,38 @@ public class DatabaseHandler extends SQLiteOpenHelper
       // execute query
       Cursor cursor=db.query(HIKES_TABLE, null, whereClause, whereArgs, null, null, null);
 
-      List<Hike> hikes = createResultsList(cursor);
+      hikes = createResultsList(cursor);
+      GlobalDataContainer.setQueryResults(hikes);
+      
       Log.d("getHikeResults()", hikes.toString());
       
       return hikes;
+   }
+   
+   // Getting list of completed hikes
+   public List<Hike> getCompletedHikes() {
+   	String whereClause = "COMP = ?";
+   	List<Hike> hikes;
    	
+   	SQLiteDatabase db=this.getReadableDatabase();
+   	
+   	// create array of 1's
+      String [] whereArgs = new String[]{"1"};
+      
+      // execute query
+      Cursor cursor=db.query(HIKES_TABLE, null, whereClause, whereArgs, null, null, null);
+
+      hikes = createResultsList(cursor);
+      GlobalDataContainer.setCompletedResults(hikes);
+      
+      Log.d("getHikeResults()", hikes.toString());
+      
+      return hikes;
    }
  
    // Getting All Hike
    public List<Hike> getAllHikes() {
-   	List<Hike> hikes = new LinkedList<Hike>();
+   	List<Hike> hikes;
       
 		// 1. build the query
 		String query = "SELECT * FROM " + HIKES_TABLE;
@@ -253,8 +281,8 @@ public class DatabaseHandler extends SQLiteOpenHelper
       // 3. updating row
       int i = db.update(HIKES_TABLE, //table
               values, // column/value
-              ID+" = ?", // selections
-              new String[] { String.valueOf(newHike.getId()) }); //selection args
+              NAME+" = ?", // selections
+              new String[] { String.valueOf(newHike.getName()) }); //selection args
    
       // 4. close
       db.close();
