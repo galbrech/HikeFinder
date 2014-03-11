@@ -32,7 +32,6 @@ public final class R {
         public static final int yosemite=0x7f020004;
     }
     public static final class id {
-<<<<<<< HEAD
         public static final int TextView01=0x7f090017;
         public static final int TextView02=0x7f090018;
         public static final int action_settings=0x7f09001c;
@@ -62,7 +61,6 @@ public final class R {
         public static final int textView7=0x7f09000a;
         public static final int textView8=0x7f09000d;
         public static final int textView9=0x7f09000f;
->>>>>>> 5bc58e14e173a624e5b4d922edd872146acafcf1
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
