@@ -2,9 +2,10 @@ package com.example.hikefinder;
 
 public class Hike
 {
+	int id;
 	String name;
 	String description;
-	int distance;
+	double distance;
 	int elevationChange;
 	int waterfall;
 	int geological;
@@ -21,6 +22,7 @@ public class Hike
 	
 	Hike()
 	{
+		id = -1;
 		name = "default";
 		description = "default";
 		distance = 0;
@@ -38,7 +40,7 @@ public class Hike
 		notes = "default";
 	}
 	
-	Hike(	String new_name, String new_description, int new_distance, int new_elevationChange, int new_waterfall,
+	Hike(	String new_name, String new_description, double new_distance, int new_elevationChange, int new_waterfall,
 			int new_geological, int new_historical, int new_dogFriendly, int new_oceanView, String new_location)
 	{
 		name = new_name;
@@ -58,10 +60,11 @@ public class Hike
 		notes = "default";
 	}
 	
-	Hike(	String new_name, String new_description, int new_distance, int new_elevationChange, int new_waterfall,
+	Hike( int new_id, String new_name, String new_description, double new_distance, int new_elevationChange, int new_waterfall,
 			int new_geological, int new_historical, int new_dogFriendly, int new_oceanView, String new_location,
 			int new_completed, int new_rating, String new_review, String new_notes)
 	{
+		id = new_id;
 		name = new_name;
 		description = new_description;
 		distance = new_distance;
@@ -80,9 +83,10 @@ public class Hike
 	}
 	
 	// getters
+	public int getId() { return this.id; }
 	public String getName() { return this.name; }
 	public String getDescription() { return this.description; }
-	public int getDistance() { return this.distance; }
+	public double getDistance() { return this.distance; }
 	public int getElevationChange() { return this.elevationChange; }
 	public int getWaterfall() { return this.waterfall; }
 	public int getGeological() { return this.geological; }
@@ -96,9 +100,10 @@ public class Hike
 	public String getNotes() { return this.notes; }
 	
 	// setters
+	public void setId(int newId) { this.id = newId; }
 	public void setName(String newName) { this.name = newName; }
 	public void setDescription(String newDescripion) { this.description = newDescripion; }
-	public void setDistance(int newDistance) { this.distance = newDistance; }
+	public void setDistance(double newDistance) { this.distance = newDistance; }
 	public void setElevationChange(int newElevationChange) { this.elevationChange = newElevationChange; }
 	public void setWaterfall(int newWaterfall) { this.waterfall = newWaterfall; }
 	public void setGeological(int newGeological) { this.geological = newGeological; }
@@ -110,4 +115,10 @@ public class Hike
 	public void setRating(int newRating) { this.rating = newRating; }
 	public void setReview(String newReview) { this.review = newReview; }
 	public void setNotes(String newNotes) { this.notes = newNotes; }
+	
+	public String toString()
+	{
+		String hikeString = "Hike Name:" + this.name;		
+		return hikeString;
+	}
 }

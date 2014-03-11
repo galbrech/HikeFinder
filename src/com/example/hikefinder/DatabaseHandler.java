@@ -1,34 +1,22 @@
 package com.example.hikefinder;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHandler extends SQLiteOpenHelper 
 {
   // Database Version
    private static final int DATABASE_VERSION = 1;
    // Database Name
-   private static final String DATABASE_NAME = "HikeDB";
-   
-	static final String NAME = "name";
-	static final String DESC = "description";
-	static final String DIST = "distance";
-	static final String ELEVCH = "elevationChange";
-	static final String WTRFL = "waterfall";
-	static final String GEO = "geological";
-	static final String HIST = "historical";
-	static final String DOG = "dogFriendly";
-	static final String OCNVW = "oceanView";
-	static final String LOC = "location";
-	               
-	static final String COMP = "completed";
-	static final String RATE = "rating";
-	static final String REVW = "review";
-	static final String NOTES = "notes";
+   private static final String DATABASE_NAME = "HikesDB";
 
    public DatabaseHandler(Context context) {
        super(context, DATABASE_NAME, null, DATABASE_VERSION);  
@@ -36,8 +24,9 @@ public class DatabaseHandler extends SQLiteOpenHelper
 
    @Override
    public void onCreate(SQLiteDatabase db) {
-       // SQL statement to create book table
-       String CREATE_HIKE_TABLE = "CREATE TABLE hikesDB ( " +
+   	Log.d("CREATE DB", "Creating HikeDB");
+      // SQL statement to create book table
+      String CREATE_HIKE_TABLE = "CREATE TABLE " + HIKES_TABLE +" ( " +
                "id INTEGER PRIMARY KEY AUTOINCREMENT, " + 
                "name TEXT, "+
                "description TEXT, "+
@@ -55,57 +44,236 @@ public class DatabaseHandler extends SQLiteOpenHelper
                "review TEXT, "+
                "notes TEXT )";
 
-       // create hikesDB table
-       db.execSQL(CREATE_HIKE_TABLE);
+      // create hikesDB table
+      db.execSQL(CREATE_HIKE_TABLE);
    }
 
    @Override
    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
        // Drop older books table if existed
-       db.execSQL("DROP TABLE IF EXISTS hikesDB");
+       db.execSQL("DROP TABLE IF EXISTS " + HIKES_TABLE);
 
        // create fresh books table
        this.onCreate(db);
    }
    
+   //======================================================================================
+
+	static final String HIKES_TABLE = "hikes";
+
+	static final String ID = "id";
+	static final String NAME = "name";
+	static final String DESC = "description";
+	static final String DIST = "distance";
+	static final String ELEVCH = "elevationChange";
+	static final String WTRFL = "waterfall";
+	static final String GEO = "geological";
+	static final String HIST = "historical";
+	static final String DOG = "dogFriendly";
+	static final String OCNVW = "oceanView";
+	static final String LOC = "location";
+	               
+	static final String COMP = "completed";
+	static final String RATE = "rating";
+	static final String REVW = "review";
+	static final String NOTES = "notes";
+   
+   
    // Adding new Hike
-   public void addHike(Hike newhike) {
+   public void addHike(Hike newHike) {
+   	Log.d("ADD_HIKE", newHike.toString()); 
+   	
       SQLiteDatabase db = this.getWritableDatabase();
       
       ContentValues values = new ContentValues();
-      values.put(NAME, newhike.getName());
-      values.put(DESC, newhike.getDescription());
-      values.put(DIST, newhike.getDistance());
-      values.put(ELEVCH, newhike.getElevationChange());
-      values.put(WTRFL, newhike.getWaterfall());
-      values.put(GEO, newhike.getGeological());
-      values.put(HIST, newhike.getHistorical());
-      values.put(DOG, newhike.dogFriendly);
-      values.put(OCNVW, newhike.getOveanView());
-      values.put(LOC, newhike.getLocation());
-      values.put(COMP, newhike.getCompleted());
-      values.put(RATE, newhike.getRating());
-      values.put(REVW, newhike.getReview());
-      values.put(NOTES, newhike.getNotes());
+      values.put(NAME, newHike.getName());
+      values.put(DESC, newHike.getDescription());
+      values.put(DIST, newHike.getDistance());
+      values.put(ELEVCH, newHike.getElevationChange());
+      values.put(WTRFL, newHike.getWaterfall());
+      values.put(GEO, newHike.getGeological());
+      values.put(HIST, newHike.getHistorical());
+      values.put(DOG, newHike.getDogFriendly());
+      values.put(OCNVW, newHike.getOveanView());
+      values.put(LOC, newHike.getLocation());
+      values.put(COMP, newHike.getCompleted());
+      values.put(RATE, newHike.getRating());
+      values.put(REVW, newHike.getReview());
+      values.put(NOTES, newHike.getNotes());
    
       // Inserting Row
-      db.insert(DATABASE_NAME, null, values);
+      db.insert(HIKES_TABLE, null, values);
       db.close(); // Closing database connection
+   }
+   
+   private List<Hike> createResultsList(Cursor cursor)
+   {
+   	List<Hike> hikes = new LinkedList<Hike>();
+   	
+		Hike hike = null;
+		if (cursor.moveToFirst()) {
+			do {
+				hike = new Hike();
+				hike.setId(cursor.getInt(0));
+				hike.setName(cursor.getString(1));
+				hike.setDescription(cursor.getString(2));
+				hike.setDistance(cursor.getDouble(3));
+				hike.setElevationChange(cursor.getInt(4));
+				hike.setWaterfall(cursor.getInt(5));
+				hike.setGeological(cursor.getInt(6));
+				hike.setHistorical(cursor.getInt(7));
+				hike.setDogFriendly(cursor.getInt(8));
+				hike.setOveanView(cursor.getInt(9));
+				hike.setLocation(cursor.getString(10));
+				hike.setCompleted(cursor.getInt(11));
+				hike.setRating(cursor.getInt(12));
+				hike.setReview(cursor.getString(13));
+				hike.setNotes(cursor.getString(14));
+			
+			   // Add book to books
+				hikes.add(hike);
+			} while (cursor.moveToNext());
+		}
+		cursor.close();
+		return hikes;
    }
  
    // Getting single Hike
-   //public Hike getContact(int id) {}
+   public List<Hike> queryHike(Hike queryHike) {
+   	int columnArgNumber = 0;
+   	String whereClause = "";
+   	
+   	//List<Hike> hikes = new LinkedList<Hike>();
+   	
+   	SQLiteDatabase db=this.getReadableDatabase();
+   	
+   	// create where clause for sql query
+   	if(queryHike.getWaterfall() == 1)
+   	{
+   		whereClause += WTRFL + "=? OR ";
+   		columnArgNumber++;
+   	}
+   	if(queryHike.getGeological() == 1)
+   	{
+   		whereClause += GEO + "=? OR ";
+   		columnArgNumber++;
+   	}
+   	if(queryHike.getHistorical() == 1)
+   	{
+   		whereClause += HIST + "=? OR ";
+   		columnArgNumber++;
+   	}
+   	if(queryHike.getDogFriendly() == 1)
+   	{
+   		whereClause += DOG + "=? OR ";
+   		columnArgNumber++;
+   	}
+   	if(queryHike.getOveanView() == 1)
+   	{
+   		whereClause += OCNVW + "=? OR ";
+   		columnArgNumber++;
+   	}
+   	// remove last " OR " from string
+   	whereClause = whereClause.substring(0, whereClause.length() - 4);
+   	
+   	// create array of 1's
+      String [] whereArgs = new String[columnArgNumber];
+      java.util.Arrays.fill(whereArgs,"1");
+      
+      // execute query
+      Cursor cursor=db.query(HIKES_TABLE, null, whereClause, whereArgs, null, null, null);
+
+      List<Hike> hikes = createResultsList(cursor);
+      Log.d("getHikeResults()", hikes.toString());
+      
+      return hikes;
+   	
+   }
  
    // Getting All Hike
-   //public List<Hike> getAllContacts() {}
+   public List<Hike> getAllHikes() {
+   	List<Hike> hikes = new LinkedList<Hike>();
+      
+		// 1. build the query
+		String query = "SELECT * FROM " + HIKES_TABLE;
+		
+		// 2. get reference to writable DB
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+		
+		// 3. go over each row, build book and add it to list
+		hikes = createResultsList(cursor);
+
+      Log.d("getAllHikes()", hikes.toString());
+
+      // return books
+      return hikes;
+   }
  
    // Getting Hike Count
-   //public int getHikesCount() {}
+   public int getHikesCount() {
+   	int count = 0;
+		String countQuery = "SELECT * FROM " + HIKES_TABLE;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor = db.rawQuery(countQuery, null);
+		count = cursor.getCount();
+		cursor.close();
+		
+      Log.d("getHikesCount()", "There are " + count + "hikes in the DB.");
+      
+		// return count
+		return count;
+   }
    
    // Updating single Hike
-   //public int updateHike(Hike contact) {}
+   public int updateHike(Hike newHike) {
+   	Log.d("UPDATE_HIKE_DB", newHike.toString());
+   	
+   	// 1. get reference to writable DB
+      SQLiteDatabase db = this.getWritableDatabase();
+   
+      // 2. create ContentValues to add key "column"/value
+      ContentValues values = new ContentValues();
+      values.put(ID, newHike.getName());
+      values.put(NAME, newHike.getName());
+      values.put(DESC, newHike.getDescription());
+      values.put(DIST, newHike.getDistance());
+      values.put(ELEVCH, newHike.getElevationChange());
+      values.put(WTRFL, newHike.getWaterfall());
+      values.put(GEO, newHike.getGeological());
+      values.put(HIST, newHike.getHistorical());
+      values.put(DOG, newHike.getDogFriendly());
+      values.put(OCNVW, newHike.getOveanView());
+      values.put(LOC, newHike.getLocation());
+      values.put(COMP, newHike.getCompleted());
+      values.put(RATE, newHike.getRating());
+      values.put(REVW, newHike.getReview());
+      values.put(NOTES, newHike.getNotes());
+   
+      // 3. updating row
+      int i = db.update(HIKES_TABLE, //table
+              values, // column/value
+              ID+" = ?", // selections
+              new String[] { String.valueOf(newHike.getId()) }); //selection args
+   
+      // 4. close
+      db.close();
+   
+      return i;
+   }
  
    // Deleting single Hike
-   //public void deleteHike(Hike contact) {}
+   public void deleteHike(Hike delHike) {
+      SQLiteDatabase db = this.getWritableDatabase();
+      db.delete(HIKES_TABLE, ID + " = ?",
+              new String[] { String.valueOf(delHike.getId()) });
+      db.close();
+   }
+   
+   // delete Hikes table
+   public void deleteHikes() {
+      SQLiteDatabase db = this.getWritableDatabase();
+      db.delete(HIKES_TABLE, null, null);
+   }
    
 }
