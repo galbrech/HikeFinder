@@ -92,7 +92,7 @@ public class Hike
 	public int getGeological() { return this.geological; }
 	public int getHistorical() { return this.historical; }
 	public int getDogFriendly() { return this.dogFriendly; }
-	public int getOveanView() { return this.oceanView; }
+	public int getOceanView() { return this.oceanView; }
 	public String getLocation() { return this.location; }
 	public int getCompleted() { return this.completed; }
 	public int getRating() { return this.rating; }
@@ -115,6 +115,32 @@ public class Hike
 	public void setRating(int newRating) { this.rating = newRating; }
 	public void setReview(String newReview) { this.review = newReview; }
 	public void setNotes(String newNotes) { this.notes = newNotes; }
+	
+	public String getFeaturesString(){
+		String features = "";
+		
+		if (this.getWaterfall() == 1) {
+			features += "waterfall, ";
+		}
+		
+		if (this.getOceanView() == 1) {
+			features += "ocean view, ";
+		}
+		
+		if (this.getGeological() == 1) {
+			features += "geological, ";
+		}
+		
+		if (this.getHistorical() == 1) {
+			features += "historical, ";
+		}
+		
+		if (this.getDogFriendly() == 1) {
+			features += "dog-friendly, ";
+		}
+		
+		return features.substring(0, features.length()-2);
+	}
 	
 	public String toString()
 	{

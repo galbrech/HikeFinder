@@ -100,7 +100,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
       values.put(GEO, newHike.getGeological());
       values.put(HIST, newHike.getHistorical());
       values.put(DOG, newHike.getDogFriendly());
-      values.put(OCNVW, newHike.getOveanView());
+      values.put(OCNVW, newHike.getOceanView());
       values.put(LOC, newHike.getLocation());
       values.put(COMP, newHike.getCompleted());
       values.put(RATE, newHike.getRating());
@@ -174,7 +174,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
    		whereClause += DOG + "=? OR ";
    		columnArgNumber++;
    	}
-   	if(queryHike.getOveanView() == 1)
+   	if(queryHike.getOceanView() == 1)
    	{
    		whereClause += OCNVW + "=? OR ";
    		columnArgNumber++;
@@ -271,7 +271,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
       values.put(GEO, newHike.getGeological());
       values.put(HIST, newHike.getHistorical());
       values.put(DOG, newHike.getDogFriendly());
-      values.put(OCNVW, newHike.getOveanView());
+      values.put(OCNVW, newHike.getOceanView());
       values.put(LOC, newHike.getLocation());
       values.put(COMP, newHike.getCompleted());
       values.put(RATE, newHike.getRating());

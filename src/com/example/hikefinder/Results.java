@@ -9,8 +9,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class Results extends Activity
+import java.util.ArrayList;
+import android.app.ListActivity;
+
+public class Results extends ListActivity
 {
 	// list view
 	ListView resultsListView;
@@ -18,27 +22,39 @@ public class Results extends Activity
 	// button
 	Button submitButton;
 	
+	// declare class variables
+	private ArrayList<Hike> hikeResults;
+	private Runnable viewParts;
+	private ItemAdapter m_adapter;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.results);
 		Intent intent = getIntent();
 		
-		resultsListView = (ListView) findViewById(R.id.listView1);
+		//resultsListView = (ListView) findViewById(R.id.);
+		resultsListView = getListView();
 		submitButton = (Button) findViewById(R.id.submitButton);
 		
-		List<Hike> hikeResults = GlobalDataContainer.getQueryResults();
+		hikeResults = new ArrayList<Hike>(GlobalDataContainer.getQueryResults());
+		
+		 m_adapter = new ItemAdapter(this, R.layout.list_item, hikeResults);
+	        setListAdapter(m_adapter);	   
+	        
 		
 		
-		
-		submitButton.setOnClickListener( new OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	            // TODO Auto-generated method stub
-	        	Intent myIntent = new Intent(Results.this, Hike_Description.class);
-	        	//myIntent.putExtra("key", value); //Optional parameters
-	        	Results.this.startActivity(myIntent);
-	        }
-	    });
 	}
+	
+	@Override
+	  protected void onListItemClick(ListView l, View v, int position, long id) {
+	    Hike item = (Hike)getListAdapter().getItem(position);
+	    GlobalDataContainer.setSelectedHike(item);
+	    Intent myIntent = new Intent(Results.this, Hike_Description.class);
+	    Results.this.startActivity(myIntent);
+	    //Toast.makeText(this, item.getName() + " selected", Toast.LENGTH_LONG).show();
+	  }
+	
+	
 }

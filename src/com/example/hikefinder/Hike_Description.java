@@ -6,8 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Hike_Description extends Activity{
+	
+	Hike selectedHike;
+	
+	TextView tv4;
+	TextView tv5;
+	TextView tv6;
+	
 	Button selectHike;
 	
 	@Override
@@ -19,6 +27,17 @@ public class Hike_Description extends Activity{
 		Intent intent = getIntent();
 		//String value = intent.getStringExtra("key"); //if it's a string you stored.
 	
+		selectedHike = GlobalDataContainer.getSelectedHike();
+		
+		tv6 = (TextView) findViewById(R.id.textView6);
+		tv6.setText(selectedHike.getName());
+		
+		tv4 = (TextView) findViewById(R.id.textView4);
+		tv4.setText(selectedHike.getFeaturesString());
+
+		tv5 = (TextView) findViewById(R.id.textView5);
+		tv5.setText(selectedHike.getDescription());
+		
 	//Below to be filled in after remaining layout.xml files are added
 		selectHike = (Button) findViewById(R.id.button1);
 		

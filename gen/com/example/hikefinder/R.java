@@ -32,12 +32,12 @@ public final class R {
         public static final int yosemite=0x7f020004;
     }
     public static final class id {
-        public static final int TextView01=0x7f090017;
-        public static final int TextView02=0x7f090018;
-        public static final int action_settings=0x7f09001c;
+        public static final int TextView01=0x7f09001b;
+        public static final int TextView02=0x7f09001c;
+        public static final int action_settings=0x7f09001f;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
-        public static final int button3=0x7f09001b;
+        public static final int button3=0x7f09001e;
         public static final int checkBox1=0x7f090008;
         public static final int checkBox2=0x7f090005;
         public static final int checkBox3=0x7f090003;
@@ -45,12 +45,13 @@ public final class R {
         public static final int checkBox5=0x7f090010;
         public static final int editText1=0x7f090013;
         public static final int editText2=0x7f09000e;
-        public static final int editText3=0x7f090015;
+        public static final int editText3=0x7f090019;
         public static final int imageButton1=0x7f090014;
-        public static final int listView1=0x7f090019;
+        public static final int middletext=0x7f090017;
+        public static final int middletextdata=0x7f090018;
         public static final int ratingBar1=0x7f090012;
-        public static final int retrn=0x7f090016;
-        public static final int submitButton=0x7f09001a;
+        public static final int retrn=0x7f09001a;
+        public static final int submitButton=0x7f09001d;
         public static final int textView1=0x7f09000c;
         public static final int textView10=0x7f090011;
         public static final int textView2=0x7f090009;
@@ -61,16 +62,19 @@ public final class R {
         public static final int textView7=0x7f09000a;
         public static final int textView8=0x7f09000d;
         public static final int textView9=0x7f09000f;
+        public static final int toptext=0x7f090015;
+        public static final int toptextdata=0x7f090016;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int checklist=0x7f030001;
         public static final int completed=0x7f030002;
         public static final int hike_description=0x7f030003;
-        public static final int options=0x7f030004;
-        public static final int profile=0x7f030005;
-        public static final int results=0x7f030006;
-        public static final int route=0x7f030007;
+        public static final int list_item=0x7f030004;
+        public static final int options=0x7f030005;
+        public static final int profile=0x7f030006;
+        public static final int results=0x7f030007;
+        public static final int route=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
